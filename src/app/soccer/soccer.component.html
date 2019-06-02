@@ -1,3 +1,25 @@
-<p>
-  soccer works!
-</p>
+<h1 class="text-center">All Soccers</h1>
+<ngx-datatable class="material" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50"
+  [rowHeight]="50" [scrollbarV]="true" [sorts]="[{prop: 'ID', dir: 'nationality'}]">
+  <ngx-datatable-column name="ID">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <a [routerLink]="['/soccers', row.id]" style="color:black"><span class="badge badge-dark">{{row.id}}</span></a>
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="nationality">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <a [routerLink]="['/soccers', row.id]" style="color:black"><span
+          class="badge badge-dark">{{row.nationality}}</span></a>
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="name">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <a [routerLink]="['/soccers', row.id]" style="color:black"><span class="badge badge-dark">{{row.name}}</span></a>
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="team">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <a [routerLink]="['/soccers', row.id]" style="color:black"><span class="badge badge-dark">{{row.team}}</span></a>
+    </ng-template>
+  </ngx-datatable-column>
+</ngx-datatable>
